@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Music Requester</title>
+{% endblock %}
+
+{% block body %}
+<div class="results">
+  <h1 style="text-align: center">Music Requester</h1>
+  <h2 style="text-align: center">Search Results:</h2>
+  <br>
+  <p style="text-align: center">Artist: {{ artist }}</p>
+  <p style="text-align: center">Album: {{ album }}</p>
+  <table>
+    <tr>
+      <th>Playlist Title</th>
+      <th>Tracks</th>
+      <th>index</th>
+    </tr>
+    {% for playlist in playlists %}
+      <tr>
+        <td>{{ playlist.title }}</td>
+        <td>
+          {% for title in playlist.titles %}
+          {{ title }}
+          <br>
+          {% endfor %}
+        </td>
+        <td>
+          <a href="/download/{{artist}}/{{album}}/{{ playlists.index(playlist) }}">Download</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

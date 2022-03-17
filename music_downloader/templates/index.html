@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Music Requester</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1 style="text-align: center">Music Requester</h1>
+
+  <form class="" action="/" method="POST">
+    <input type="text" name="artist" id="artist" placeholder="Artist">
+    <input type="text" name="album" id="album" placeholder="Album">
+    <input type="submit" value="Search">
+  </form>
+</div>
+{% endblock %}
